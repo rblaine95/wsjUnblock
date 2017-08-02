@@ -24,6 +24,10 @@
     "https://*.nytimes.com/*",
     "http://*.nytimes.com/*",
     "https://*.nyt.com/*",
-    "http://*.nyt.com/*"
+    "http://*.nyt.com/*",
+    "https://*.bloomberg.com/*",
+    "http://*.bloomberg.com/*",
+    "https://*.bwbx.io/*",
+    "http://*.bwbx.io/*"
   ]
 }

@@ -26,6 +26,10 @@ var sites = {
 	},
 	nyt: {
 		js: "*://*.com/*mtr.js" // this one causing a pop up asking for subscription
+	},
+	bloomberg: {
+		url: "*://*.bloomberg.com/*",
+		js: "*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*"
 	}
 };
 
@@ -35,7 +39,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 		
 		return { cancel: true };
 	}, {
-		urls: [ sites.nyt.js, sites.wsj.js ],
+		urls: [ sites.nyt.js, sites.wsj.js, sites.bloomberg.js ],
 		// target is script
 		types: [ "script" ]
 	},
@@ -61,7 +65,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 
 		return { requestHeaders: details.requestHeaders };
 	}, {
-		urls: [ sites.wsj.url, sites.ft.url ],
+		urls: [ sites.wsj.url, sites.ft.url, sites.bloomberg.url ],
 		// target is the document that is loaded for a top-level frame
 		types: [ "main_frame" ]
 	},
