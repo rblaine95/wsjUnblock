@@ -1,7 +1,10 @@
 
 ## Make WSJ & NYTimes Great Again:
 
-#### Get around the paywall for many Wall Street Journal, New York Times and Financial Times content
+#### Get around the paywalls for Wall Street Journal, New York Times, Financial Times and Bloomberg.
+
+### Update in Aug 2017:
+*	Thank [apank](https://github.com/apank) for adding [Bloomberg](https://www.bloomberg.com/businessweek) to our list.
 
 ### Update in Apr 2017:
 *	**Fact**: WSJ has an advertisement popping up *every single time* we read an article, too much!
