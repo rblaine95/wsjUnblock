@@ -1,5 +1,25 @@
-body {
-    overflow: scroll !important;
+/**
+ * Note about why we need to override these attributes
+ *
+ * there is this class on html and body:
+ *   .nytc---modal-window---noScroll {
+ *	    height: 100%;
+ *	    overflow: hidden;
+ *	    position: relative;
+ *	};
+ *
+ * It causes issues:
+ * 	1: unable to scroll
+ * 		So we need to override `overflow` to make page scrollable.
+ * 	2: images should be lazyloaded but do not load at all
+ *     I just accidently find it out that removing this `height: 100%` will restore javascript's
+ * functionality to lazyload images, so we are all set!
+ *
+ * We do not want to see the pop up for signup, so just hide it
+ */
+html {
+	height: auto !important;
+	overflow: scroll !important;
 }
 
 #app-container div[role=dialog] {
