@@ -1,6 +1,6 @@
 {
   "name": "Make WSJ & NYT Great Again",
-  "version": "0.2",
+  "version": "0.3",
   "manifest_version": 2,
   "description": "Get around the paywall for many WSJ, NYT & FT content",
   "homepage_url": "http://blog.jinsongli.com",
@@ -13,6 +13,12 @@
     ],
     "persistent": true
   },
+  "content_scripts": [
+      {
+        "matches": ["https://cooking.nytimes.com/*"],
+        "css" : ["css/nyt.css"]
+      }
+  ],
   "permissions": [
     "webRequest",
     "webRequestBlocking",

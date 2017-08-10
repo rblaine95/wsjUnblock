@@ -1,0 +1,7 @@
+body {
+    overflow: scroll !important;
+}
+
+#app-container div[role=dialog] {
+    display: none !important;
+}
