@@ -5,6 +5,7 @@
 
 ### Update in Aug 2017:
 *	Thank [apank](https://github.com/apank) for adding [Bloomberg](https://www.bloomberg.com/businessweek) to our list.
+*	Thank [strafer](https://github.com/strafer) for creating an issue that [New York Times Cooking section](https://cooking.nytimes.com/) has separate paywall. We fixed it by just injecting CSS to the pages to hide the pop up dialog and still keep JavaScript working as expected. See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/3) for details.
 
 ### Update in Apr 2017:
 *	**Fact**: WSJ has an advertisement popping up *every single time* we read an article, too much!
