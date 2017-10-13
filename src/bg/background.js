@@ -17,6 +17,9 @@ var newHeader = {
 
 // sites that we want to access
 var sites = {
+	washingtonpost: {
+      js: "*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*" // This one causes unescapable paywall/ad-wall lightbox for every article
+	},
 	wsj: {
 		url: "*://*.wsj.com/*",
 		js: "*://*/*cxense-candy.js" // this one causing a pop up advertisement for every article
@@ -39,7 +42,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 		
 		return { cancel: true };
 	}, {
-		urls: [ sites.nyt.js, sites.wsj.js, sites.bloomberg.js ],
+		urls: [ sites.nyt.js, sites.wsj.js, sites.bloomberg.js, sites.washingtonpost.js ],
 		// target is script
 		types: [ "script" ]
 	},
