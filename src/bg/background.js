@@ -19,6 +19,7 @@ var newHeader = {
 var sites = {
 	washingtonpost: {
 		js: [
+			"*://*.washingtonpost.com/*pwapi/*.js*", // This one causes paywall/ad-wall lightbox for every article
 			"*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*" // This one causes paywall/ad-wall lightbox sometimes with Adblock Plus enabled
 		]
 	},
