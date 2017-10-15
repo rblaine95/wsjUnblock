@@ -17,21 +17,41 @@ var newHeader = {
 
 // sites that we want to access
 var sites = {
+	washingtonpost: {
+		js: [
+			"*://*.washingtonpost.com/*pwapi/*.js*", // This one causes paywall/ad-wall lightbox for every article
+			"*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*" // This one causes paywall/ad-wall lightbox sometimes with Adblock Plus enabled
+		]
+	},
 	wsj: {
 		url: "*://*.wsj.com/*",
-		js: "*://*/*cxense-candy.js" // this one causing a pop up advertisement for every article
+		js: [
+			"*://*/*cxense-candy.js" // this one causing a pop up advertisement for every article
+		]
 	},
 	ft: {
 		url: "*://*.ft.com/*",
 	},
 	nyt: {
-		js: "*://*.com/*mtr.js" // this one causing a pop up asking for subscription
+		js: [
+			"*://*.com/*mtr.js" // this one causing a pop up asking for subscription
+		]
 	},
 	bloomberg: {
 		url: "*://*.bloomberg.com/*",
-		js: "*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*"
+		js: [ "*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*" ]
 	}
 };
+
+var js_urls = [];
+for (var site_index in sites)
+{
+	site = sites[site_index];
+	if(site.js)
+	{
+		js_urls = js_urls.concat(site.js);
+	}
+}
 
 chrome.webRequest.onBeforeRequest.addListener(
 	function() {
@@ -39,7 +59,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 		
 		return { cancel: true };
 	}, {
-		urls: [ sites.nyt.js, sites.wsj.js, sites.bloomberg.js ],
+		urls: js_urls,
 		// target is script
 		types: [ "script" ]
 	},
