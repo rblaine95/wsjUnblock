@@ -3,6 +3,9 @@
 
 #### Get around the paywalls for Wall Street Journal, New York Times, Financial Times and Bloomberg.
 
+### Update in Oct 2017:
+*	Thank [hotcap](https://github.com/hotcap) for adding [Washington Post](https://www.washingtonpost.com) to our list. See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/7) for details.
+
 ### Update in Aug 2017:
 *	Thank [apank](https://github.com/apank) for adding [Bloomberg](https://www.bloomberg.com/businessweek) to our list.
 *	Thank [strafer](https://github.com/strafer) for creating an issue that [New York Times Cooking section](https://cooking.nytimes.com/) has separate paywall. We fixed it by just injecting CSS to the pages to hide the pop up dialog and still keep JavaScript working as expected. See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/3) for details.

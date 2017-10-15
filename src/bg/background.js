@@ -19,14 +19,14 @@ var newHeader = {
 var sites = {
 	washingtonpost: {
 		js: [
-			"*://*.washingtonpost.com/*pwapi/*.js*", // This one causes paywall/ad-wall lightbox for every article
-			"*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*" // This one causes paywall/ad-wall lightbox sometimes with Adblock Plus enabled
+			"*://*.washingtonpost.com/*pwapi/*.js*", // this one causes paywall/ad-wall lightbox for every article
+			"*://*.washingtonpost.com/*drawbridge/drawbridge.js?_*", // this one causes paywall/ad-wall lightbox sometimes with Adblock Plus enabled
 		]
 	},
 	wsj: {
 		url: "*://*.wsj.com/*",
 		js: [
-			"*://*/*cxense-candy.js" // this one causing a pop up advertisement for every article
+			"*://*/*cxense-candy.js", // this one causes a pop up advertisement for every article
 		]
 	},
 	ft: {
@@ -34,32 +34,35 @@ var sites = {
 	},
 	nyt: {
 		js: [
-			"*://*.com/*mtr.js" // this one causing a pop up asking for subscription
+			"*://*.com/*mtr.js", // this one causes a pop up asking for subscription
 		]
 	},
 	bloomberg: {
 		url: "*://*.bloomberg.com/*",
-		js: [ "*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*" ]
+		js: [
+			"*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*",
+		]
 	}
 };
 
-var js_urls = [];
-for (var site_index in sites)
-{
-	site = sites[site_index];
-	if(site.js)
-	{
-		js_urls = js_urls.concat(site.js);
-	}
-}
+// extract all script urls we want to block
+var script_urls = Object.values(sites)
+                .map(site => site.js)
+                .filter(Array.isArray)
+                .reduce((prev, curr) => prev.concat(curr), []);
+
+// extract all main_frame urls we want to override
+var main_frame_urls = Object.values(sites)
+                    .map(site => site.url)
+                    .filter(url => url);
 
 chrome.webRequest.onBeforeRequest.addListener(
 	function() {
-		console.log( "we are going to block some low energy javascripts" );
+		console.log("we are going to block some low energy javascripts");
 		
 		return { cancel: true };
 	}, {
-		urls: js_urls,
+		urls: script_urls,
 		// target is script
 		types: [ "script" ]
 	},
@@ -67,25 +70,25 @@ chrome.webRequest.onBeforeRequest.addListener(
 );
 
 chrome.webRequest.onBeforeSendHeaders.addListener(
-	function( details ) {
-		console.log( "we are going to override some request headers" );
+	function(details) {
+		console.log("we are going to override some request headers");
 
 		// remove existing referer and cookie
-		for ( var i = 0; i < details.requestHeaders.length; i++) {
-			if ( details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie.name ) {
+		for (let i = 0; i < details.requestHeaders.length; i++) {
+			if (details.requestHeaders[i].name === newHeader.referer.name || details.requestHeaders[i].name === newHeader.cookie.name) {
 				details.requestHeaders.splice(i, 1);
 				i--;
 			}
 		}
 
 		// add new referer
-		details.requestHeaders.push( newHeader.referer );
+		details.requestHeaders.push(newHeader.referer);
 		// remove cache
-		details.requestHeaders.push( newHeader.cachecontrol );
+		details.requestHeaders.push(newHeader.cachecontrol);
 
 		return { requestHeaders: details.requestHeaders };
 	}, {
-		urls: [ sites.wsj.url, sites.ft.url, sites.bloomberg.url ],
+		urls: main_frame_urls,
 		// target is the document that is loaded for a top-level frame
 		types: [ "main_frame" ]
 	},
