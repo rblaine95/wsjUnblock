@@ -42,6 +42,12 @@ var sites = {
 		js: [
 			"*://*.bwbx.io/s3/javelin/public/javelin/js/pianola/*",
 		]
+	},
+	bizjournals: {
+		url: "*://*.bizjournals.com/*",
+		js: [
+			"*://*.bizjournals.com/dist/js/article.min.js*"
+		]
 	}
 };
 
@@ -59,7 +65,7 @@ var main_frame_urls = Object.values(sites)
 chrome.webRequest.onBeforeRequest.addListener(
 	function() {
 		console.log("we are going to block some low energy javascripts");
-		
+
 		return { cancel: true };
 	}, {
 		urls: script_urls,
