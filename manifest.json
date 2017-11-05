@@ -36,6 +36,8 @@
     "https://*.bwbx.io/*",
     "http://*.bwbx.io/*",
     "https://*.washingtonpost.com/*",
-    "http://*.washingtonpost.com/*"
+    "http://*.washingtonpost.com/*",
+    "https://*.bizjournals.com/*",
+    "http://*.bizjournals.com/*"
    ]
 }
