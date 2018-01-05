@@ -48,6 +48,9 @@ var sites = {
 		js: [
 			"*://*.bizjournals.com/dist/js/article.min.js*"
 		]
+	},
+	philly: {
+		url: "*://*.philly.com",
 	}
 };
 
