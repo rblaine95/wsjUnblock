@@ -39,6 +39,7 @@
     "http://*.washingtonpost.com/*",
     "http://*.philly.com/*",
     "https://*.bizjournals.com/*",
-    "http://*.bizjournals.com/*"
+    "http://*.bizjournals.com/*",
+    "http://www.kleinezeitung.at/*"
    ]
 }
