@@ -37,6 +37,7 @@
     "http://*.bwbx.io/*",
     "https://*.washingtonpost.com/*",
     "http://*.washingtonpost.com/*",
+    "http://*.philly.com/*",
     "https://*.bizjournals.com/*",
     "http://*.bizjournals.com/*"
    ]
