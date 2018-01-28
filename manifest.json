@@ -1,8 +1,9 @@
 {
   "name": "Make WSJ & NYT Great Again",
-  "version": "0.3",
+  "version": "0.4",
   "manifest_version": 2,
   "description": "Get around the paywall for many WSJ, NYT & FT content",
+  "author": "Jinsong Li",
   "homepage_url": "http://blog.jinsongli.com",
   "icons": {
     "48": "icons/eric_cartman.png"

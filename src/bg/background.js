@@ -1,6 +1,6 @@
 
 // new http header parameters to override
-var newHeader = {
+const newHeader = {
 	referer: {
 		name: "Referer",
 		value: "https://www.facebook.com", // or "https://www.twitter.com"
@@ -16,7 +16,7 @@ var newHeader = {
 };
 
 // sites that we want to access
-var sites = {
+const sites = {
 	washingtonpost: {
 		js: [
 			"*://*.washingtonpost.com/*pwapi/*.js*", // this one causes paywall/ad-wall lightbox for every article
@@ -68,7 +68,10 @@ var main_frame_urls = Object.values(sites)
                     .map(site => site.url)
                     .filter(url => url);
 
-chrome.webRequest.onBeforeRequest.addListener(
+// add Firefox and Edge support with the global `browser` object
+browser = typeof browser !== "undefined" ? browser : chrome;
+
+browser.webRequest.onBeforeRequest.addListener(
 	function() {
 		console.log("we are going to block some low energy javascripts");
 
@@ -81,7 +84,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 	[ "blocking" ]
 );
 
-chrome.webRequest.onBeforeSendHeaders.addListener(
+browser.webRequest.onBeforeSendHeaders.addListener(
 	function(details) {
 		console.log("we are going to override some request headers");
 
