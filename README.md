@@ -13,9 +13,10 @@
 *   [Business Journals](https://www.bizjournals.com/)
 *   [Philly.com](https://www.philly.com/)
 *   [Kleine Zeitung](http://www.kleinezeitung.at/)
+*   [The Globe and Mail](https://www.theglobeandmail.com/)
 
 ### Update in Jan 2018:
-*   Thank [Scratch](https://github.com/Scrxtchy) for adding Firefox and Edge support of this extension! See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/25) for details. Also add [`kleinezeitung.at`](https://github.com/njuljsong/wsjUnblock/pull/22), [`bizjournals.com`](https://github.com/njuljsong/wsjUnblock/pull/14) and `philly.com`
+*   Thank [Scratch](https://github.com/Scrxtchy) for adding Firefox and Edge support of this extension! See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/25) for details. Also add [`kleinezeitung.at`](https://github.com/njuljsong/wsjUnblock/pull/22), [`bizjournals.com`](https://github.com/njuljsong/wsjUnblock/pull/14), [`theglobeandmail.com`](https://github.com/njuljsong/wsjUnblock/pull/26) and `philly.com`
 
 ### Update in Oct 2017:
 *	Thank [hotcap](https://github.com/hotcap) for adding [Washington Post](https://www.washingtonpost.com) to our list. See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/7) for details.
