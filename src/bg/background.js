@@ -54,7 +54,12 @@ const sites = {
 	},
 	kleinezeitung: {
 		url: "*://*.kleinezeitung.at/*",
-	}
+	},
+	globeandmail: {
+		js: [
+			"*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle/*.js*"
+		]
+	},
 };
 
 // extract all script urls we want to block
