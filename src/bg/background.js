@@ -60,6 +60,12 @@ const sites = {
 			"*://*.theglobeandmail.com/pb/gr/c/default/*/story-bundle/*.js*"
 		]
 	},
+	nydailynews: {
+		url: "*://*.nydailynews.com/*",
+		js: [
+			"*://*.tribdss.com/reg/tribune/*"
+		]
+	}
 };
 
 // extract all script urls we want to block

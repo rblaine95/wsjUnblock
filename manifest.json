@@ -43,6 +43,10 @@
     "http://*.bizjournals.com/*",
     "http://www.kleinezeitung.at/*",
     "https://*.theglobeandmail.com/*",
-    "http://*.theglobeandmail.com/*"
+    "http://*.theglobeandmail.com/*",
+    "https://*.nydailynews.com/*",
+    "http://*.nydailynews.com/*",
+    "https://*.tribdss.com/*",
+    "http://*.tribdss.com/*"
    ]
 }
