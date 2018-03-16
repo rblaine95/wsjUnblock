@@ -53,7 +53,7 @@
 
 *  **Idea**:  Block those Javascript files from downloading :)
 
-*  **Sugggestion For NYTimes Developers**: concatenate the minified Javascript files, and maybe attach a random string in your concatenated Javascript filename?
+*  **Suggestion For NYTimes Developers**: concatenate the minified Javascript files, and maybe attach a random string in your concatenated Javascript filename?
 
 #### Interested in development process?
 *	I wrote a blog [How to bypass WSJ and NYTimes paywalls?](http://blog.jinsongli.com/) about the details on my website.
