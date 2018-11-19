@@ -2,6 +2,25 @@
 ## Make WSJ & NYTimes Great Again:
 
 #### Get around the paywalls for Wall Street Journal, New York Times, Financial Times and Bloomberg.
+#### Now support [Firefox](#install-instructions-for-firefox) and [Microsoft Edge](#install-instructions-for-microsoft-edge).
+
+### Supported Websites:
+*   [Wall Street Journal](https://www.wsj.com/)
+*   [New York Times](https://www.nytimes.com/)
+*   [Financial Times](https://www.ft.com/)
+*   [Bloomberg](https://www.bloomberg.com/)
+*   [Washington Post](https://www.washingtonpost.com)
+*   [Business Journals](https://www.bizjournals.com/)
+*   [Philly.com](https://www.philly.com/)
+*   [Kleine Zeitung](http://www.kleinezeitung.at/)
+*   [The Globe and Mail](https://www.theglobeandmail.com/)
+*   [New York Daily News](http://www.nydailynews.com/)
+
+### Update in Jan 2018:
+*   Thank [Scratch](https://github.com/Scrxtchy) for adding Firefox and Edge support of this extension! See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/25) for details. Also add [`kleinezeitung.at`](https://github.com/njuljsong/wsjUnblock/pull/22), [`bizjournals.com`](https://github.com/njuljsong/wsjUnblock/pull/14), [`theglobeandmail.com`](https://github.com/njuljsong/wsjUnblock/pull/26) and `philly.com`
+
+### Update in Oct 2017:
+*	Thank [hotcap](https://github.com/hotcap) for adding [Washington Post](https://www.washingtonpost.com) to our list. See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/7) for details.
 
 ### Update in Oct 2017:
 *	Thank [hotcap](https://github.com/hotcap) for adding [Washington Post](https://www.washingtonpost.com) to our list. See [this pull request](https://github.com/njuljsong/wsjUnblock/pull/7) for details.
@@ -38,20 +57,31 @@
 
 *  **Idea**:  Block those Javascript files from downloading :)
 
-*  **Sugggestion For NYTimes Developers**: concatenate the minified Javascript files, and maybe attach a random string in your concatenated Javascript filename?
+*  **Suggestion For NYTimes Developers**: concatenate the minified Javascript files, and maybe attach a random string in your concatenated Javascript filename?
 
 #### Interested in development process?
 *	I wrote a blog [How to bypass WSJ and NYTimes paywalls?](http://blog.jinsongli.com/) about the details on my website.
 
+### Want to contribute?
+*   You are welcome to use the same logic to get around sites you are interested in, if it works, submit a Pull Request, and I'd love to merge it. Thank you!
 
-### Install Instructions
-*	click "clone or download", download zip. The downloaded file is an unpacked chrome extension, unzip it into a directory.
-*	Visit `chrome://extensions` (via omnibox or menu -> Tools -> Extensions).
-*	Enable Developer mode by ticking the checkbox in the upper-right corner.
-*	Click on the "Load unpacked extension..." button.
-*	Select the directory containing your *unpacked* extension.
-*	Reference: [How to install an unpacked chrome extension](http://stackoverflow.com/questions/24577024/install-chrome-extension-not-in-the-store/24577660#24577660)
+### Install Instructions for Chrome
+*   click "clone or download", download zip. The downloaded file is an unpacked chrome extension, unzip it into a directory.
+*   Visit `chrome://extensions` (via omnibox or menu -> Tools -> Extensions).
+*   Enable Developer mode by ticking the checkbox in the upper-right corner.
+*   Click on the "Load unpacked extension..." button.
+*   Select the directory containing your *unpacked* extension.
+*   Reference: [How to install an unpacked chrome extension](http://stackoverflow.com/questions/24577024/install-chrome-extension-not-in-the-store/24577660#24577660)
 
+### Install Instructions for Firefox
+*   Open Firefox
+*   Enter "about:debugging" in the URL bar
+*   Click "Load Temporary Add-on"
+*   Open the extension's directory and select `manifest.json` inside the extension.
+*   Read [Temporary installation in Firefox](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) For details.
+
+### Install Instructions for Microsoft Edge
+*   Read [Adding, moving, and removing extensions for Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/adding-and-removing-extensions)
 
 ### License
 This is free and unencumbered software released into the public domain.
